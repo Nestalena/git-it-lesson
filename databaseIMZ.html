@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, unitial-scale=1.0">
+    <link rel="stylesheet" href="styleDatabase.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin=""/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Криолитозона Якутии</title>
+</head>
+<body>
+     <!--Map-->
+     <div class="map-universe">
+          <div class="popup-wells open-well1 map-well1" id="my-wells">
+             <svg display="none" >
+                 <symbol  viewBox=" 0 0 510 510" id="circle1"  >
+                     <g>
+                         <g id="check-circle-blank">
+                             <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z"/>
+                         </g>
+                     </g>
+                 </symbol>
+             </svg>
+             <svg class="circle_1" >
+                 <use xlink:href="#circle1" ></use>
+             </svg>
+         </div>
+          <div class="map-basis" id="map"></div>
+
+     </div><!--END Map-->
+
+
+     <!--Sidebar-->
+     <div class="sidebar">
+         <header>
+             <h1 class="title-header-sidebar">КРИОЛИТОЗОНА ЯКУТИИ</h1>
+         </header>
+
+         <div class="navigation">
+             <button class="button-navigation">Карты</button>
+             <button class="button-navigation open-popup">Научные труды</button>
+             <button class="collapsible">База данных</button>
+                 <div class="content">
+                     <div class="geo-temp open-wells-map">Геотемпературные скважины</div>
+                 </div>
+         </div>
+
+     </div>
+     </div> <!--END Sidebar-->
+
+     <!--Открывающие окно вкладки Научные труды-->
+     <div class="popup-table">
+         <div class="popup">
+             <div class="popup-head">
+                 <img class="close-popup" src="/icons/icon-cross.png" alt="icon">
+             </div>
+             <div>
+                 <h2>Научные труды</h2>
+
+                 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Поиск по названию.." title="Type in a name">
+
+                 <table id="myTable">
+                     <tr class="header">
+                         <th style="width:50%;">Название</th>
+                         <th style="width:30%;">Автор</th>
+                         <th style="width:10%;">Год</th>
+                         <th style="width:10%;">Скачать</th>
+                     </tr>
+                     <tr>
+                         <td>Аласность Центральной Якутии</td>
+                         <td>Босиков Н.П.</td>
+                         <td>1978</td>
+                         <td><a href="https://drive.google.com/file/d/1rxgOV8qRJQL5zTzmwZTeziiTUwKjVbkE/view?usp=sharing" download>Скачать</a></td>
+                     </tr>
+                     <tr>
+                         <td>Геотемпературное поле и криолитозона</td>
+                         <td>Железняк М.Н.</td>
+                         <td>2005</td>
+                         <td><a href="https://drive.google.com/file/d/1_iFrHPY73ZsRgfoHAZMMT5JWxlGLlJ7o/view?usp=sharing" download="my-app">Скачать</a></td>
+                     </tr>
+                     <tr>
+                         <td>Дистанционные методы излучения криолитозоны</td>
+                         <td>Петропаловская М.С.</td>
+                         <td>1988</td>
+                         <td><a href="https://drive.google.com/file/d/1gZmpTKzWAH9rQ6PZgGTvjmna2IqaLOxE/view?usp=sharing" download="my-app">Скачать</a></td>
+                     </tr>
+                     <tr>
+                         <td>Криогенное строение четвертичных отложений Лено-Алданской впадины</td>
+                         <td>Иванов М.С.</td>
+                         <td>1984</td>
+                         <td><a href="https://drive.google.com/file/d/1NziIewuS84331G7U47ajntmCQhLuVkOK/view?usp=sharing" download="my-app">Скачать</a></td>
+                     </tr>
+                     <tr>
+                         <td>Криолитозона северной части Лено-Амгинского междуречья</td>
+                         <td>Соловьев П.А.</td>
+                         <td>1959</td>
+                         <td><a href="https://drive.google.com/file/d/1k68PDG_kQX6yH-E3fExSkFBtjux8PX-V/view?usp=sharing" download="my-app">Скачать</a></td>
+                     </tr>
+                     <tr>
+                         <td>Мерзлотные Ландшафты Якутии</td>
+                         <td>Федоров А.Н.</td>
+                         <td>1991</td>
+                         <td><a href="https://drive.google.com/file/d/1Qen6fNWjQE-aKxzQ1n5W7vosc078f1UD/view?usp=sharing" download="my-app">Скачать</a></td>
+                     </tr>
+                     <tr>
+                         <td>Южная Якутия</td>
+                         <td>Попов И.И.</td>
+                         <td>1975</td>
+                         <td><a href="https://drive.google.com/file/d/1XL9u1MjbuLWh7PsVCzTgefsW-u3CKMpp/view?usp=sharing" download="my-app">Скачать</a></td>
+                     </tr>
+                     <tr>
+                         <td>Лдьистые породы и термоденудация в районе поселка Батагай</td>
+                         <td>Куницкий В.В. и др.</td>
+                         <td>2013</td>
+                         <td><a href="https://drive.google.com/file/d/1IBOubunYh-xzBWc3A9c-ZHnCxwJeckOz/view?usp=sharing" download="my-app">Скачать</a></td>
+                     </tr>
+                 </table>
+             </div>
+         </div>
+     </div> <!--END Открывающие окно вкладки Научные труды-->
+
+
+
+     <!--Скважина 1 и его таблица-->
+     <div class="table-well1 popup-table-well1">
+         <div class="table-head-well1 close-well1"><h3>Тикси-30</h3></div>
+         <div class="table-container-well1">
+             <table class="well1">
+                 <tr>
+                     <td>Регион</td>
+                     <td>Арктическая Якутия</td>
+                 </tr>
+                 <tr>
+                     <td>Физико-географическая область</td>
+                     <td>Прибрежная часть Хараулахского хребта</td>
+                 </tr>
+                 <tr>
+                     <td>Период наблюдений, годы</td>
+                     <td>1992-2017, 2020-2021</td>
+                 </tr>
+                 <tr>
+                     <td>Абсолютная высота, м</td>
+                     <td>50</td>
+                 </tr>
+                 <tr>
+                     <td>Глубина скважины, м</td>
+                     <td>30</td>
+                 </tr>
+                 <tr>
+                     <td>Диапазон межгодовой изменчивости средней годовой температуры грунта на подошве СТС</td>
+                     <td>-8,9...-12,0</td>
+                 </tr>
+                 <tr>
+                     <td>Температура грунта в нижней части слоя годовых теплооборотов (глубина, м)</td>
+                     <td>-10,7 (30)</td>
+                 </tr>
+                 <tr>
+                     <td>Среднее многолетнее значение мощности СТС, м</td>
+                     <td>1,2</td>
+                 </tr>
+                 <tr>
+                     <td>Состав грунта СТС</td>
+                     <td>Глыбы, щебень, дресва</td>
+                 </tr>
+                 <tr>
+                     <td>Состав грунта ММП (объемная льдистость в %) </td>
+                     <td>Аргиллиты трещиноватые и плотные (менее 5%)</td>
+                 </tr>
+                 <tr>
+                     <td>Элемент мезорельефа</td>
+                     <td>Привершинная поверхность невысокой горной гряды</td>
+                 </tr>
+                 <tr>
+                     <td>Растительный покров</td>
+                     <td>Горная дриадово- лишайниковая тундра</td>
+                 </tr>
+                 <tr>
+                     <td>Напочвенный покров (мощность см)</td>
+                     <td>Осутствует</td>
+                 </tr>
+                 <tr>
+                     <td>Диапазон межгодовой изменчивости максимальной высоты снежного покрова, см)</td>
+                     <td>0-10</td>
+                 </tr>
+                 <tr>
+                     <td>Лаборатория, ответственная за проведение мониторинга</td>
+                     <td>ЛКЛ (П.Я.Константинов)</td>
+                 </tr>
+             </table>
+             <div class="div-btn-well1">
+                 <button class="btn-well1"><a class="link-well1" href="table-info-wells/well1.txt" download><b>Скачать</b></a></button>
+             </div>
+         </div>
+     </div><!--END скважина 1 -->
+
+</body>
+</html>
+
+
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+<script src="scripts/map.js"></script>
+<script src="scripts/functionGeoTemp.js"></script>
+<script src="scripts/functionFilterTable.js"></script>
+<script src="scripts/popupOpenTable.js"></script>
+<script src="scripts/popupOpenWells.js"></script>
+<script src="scripts/openWellsToMap.js"></script>
+
+<script>
+
+
+
+</script>
+
+
+
+
