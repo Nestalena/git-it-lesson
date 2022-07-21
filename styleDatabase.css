@@ -1,0 +1,340 @@
+@font-face {
+    font-family: 'SourceSansPro';
+    src: url("../fonts/SourceSansPro-Light.woff") format("woff"),
+    src: url("../fonts/SourceSansPro-Light.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceSansPro';
+    src: url("../fonts/SourceSansPro-Regular.woff") format("woff"),
+    src: url("../fonts/SourceSansPro-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceSansPro';
+    src: url("../fonts/SourceSansPro-SemiBold.woff") format("woff"),
+    src: url("../fonts/SourceSansPro-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: SourceSansPro, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+
+/*MAP*/
+.map-universe {
+    position: relative;
+}
+
+.map-basis {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+
+    position: absolute;
+    z-index: 1;
+}
+
+
+/*Circles*/
+.popup-wells {
+    display: none;
+
+
+
+}
+
+.map-universe .circle_1 {
+    width: 10px;
+    height: 10px;
+    fill: red;
+    z-index: 2;
+   transform: translate3d(990px, 240px, 0px);
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    transform-origin: 0 0;
+    left: 0;
+    top: 0;
+    user-select: none;
+    background-attachment: fixed;
+
+
+
+}
+
+
+/*Sidebar*/
+.sidebar {
+    width: 350px;
+    max-width: 350px;
+    flex-basis: 350px;
+
+    background-color: rgb(81, 127, 156);
+    opacity: 0.8;
+
+    position: fixed;
+    top:0;
+    left:0;
+    bottom: 0;
+
+    z-index: 5;
+}
+
+.title-header-sidebar {
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.title-container-sidebar {
+    color: honeydew;
+    padding: 20px;
+}
+
+.navigation .button-navigation {
+    height: 40px;
+    width: 300px;
+    margin: 0 20px 5px 20px;
+
+    display: block;
+
+    color: rgb(81, 127, 156);
+    font-size: 18px;
+    text-decoration-color: black;
+    border: 1px;
+}
+
+/*Стиль для popup Научных трудов*/
+* {
+    box-sizing: border-box;
+}
+
+#myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+
+#myTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+}
+
+#myTable th, #myTable td {
+    text-align: left;
+    padding: 12px;
+}
+
+#myTable tr {
+    border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+.popup-table {
+    position: absolute;
+    width: 1000px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    z-index: 4;
+    display: none;
+}
+
+.popup {
+    top:50%;
+    left: 50%;
+    background: #ffffff;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+    padding-top: 60px;
+}
+
+.open-popup {
+    cursor: pointer
+}
+
+.close-popup {
+    position: fixed;
+    height: 30px;
+    width: 30px;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+
+
+/*Стиль для кнопки база данных*/
+.collapsible {
+    width: 300px;
+    height: 40px;
+    margin: 0 20px 5px 20px;
+
+    cursor: pointer;
+
+    border: 1px;
+    text-align: center;
+    outline: none;
+    font-size: 18px;
+    color: rgb(81, 127, 156);
+}
+
+.content {
+    width: 300px;
+    height: 100px;
+    margin: 10px 20px 5px 20px;
+
+
+    background-color: rgb(81, 127, 156);
+    font-size: 17px;
+    max-height: 0;
+    color: #ffffff;
+    text-align: center;
+
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+} /*Стиль для кнопки база данных*/
+
+
+
+
+
+
+
+
+/*Таблица скважины №1*/
+.table-well1 {
+    position: absolute;
+    width: 800px;
+    height: 630px;
+    top: 150px;
+    left: 1050px;
+    z-index: 3;
+    background-color: #525050;
+    opacity: 0.85;
+    display: none;
+}
+
+.table-well1 .table-head-well1 {
+    width: 800px;
+    height: 30px;
+    z-index: 3;
+    position: absolute;
+    background-color: #252323;
+    color: white;
+    padding: 0 0 0 30px;
+    cursor: pointer;
+}
+
+.table-well1 .table-container-well1 {
+    z-index: 3;
+    height: 600px;
+    width: 800px;
+}
+
+.table-container-well1 .well1 {
+    color: white;
+    z-index: 3;
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 20px;
+    border-collapse: collapse;
+}
+
+.well1 tr {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    padding: 2.7px 5px;
+}
+
+.well1 td {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    padding: 2.7px 5px;
+}
+
+
+/*Открыть при нажатии геотемпературные скважины скважины на карте*/
+
+.geo-temp {
+    cursor: pointer;
+}
+
+.div-btn-well1 {
+    width: 800px;
+    height: 30px;
+    z-index: 3;
+    position: absolute;
+    background-color: #252323;
+    color: white;
+}
+
+.div-btn-well1 .btn-well1 {
+    height: 30px;
+    width: 80px;
+    opacity: 0.8;
+    margin: 0;
+    padding: 0;
+    color: white;
+
+    position: absolute;
+    z-index: 3;
+    left: 720px;
+    background-color: #2a2727;
+    opacity: 0.8;
+    display: block;
+    border: 0;
+}
+
+.link-well1 {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

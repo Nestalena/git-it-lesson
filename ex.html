@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button class="button-navigation open-popup">Научные труды</button>
+
+
+<div class="popup-bg">
+    <div class="popup">
+        <div class="popup-head">
+            <img class="close-popup" src="/icons/icon-cross.png" alt="icon">
+        </div>
+        <h1>jtrgrt</h1>
+    </div>
+</div> <!--END Открывающие окно вкладки Научные труды-->
+
+
+</body>
+</html>
+
+<style>
+    .popup-bg {
+        position: absolute;
+        width: 1000px;
+        height: 500px;
+        top: 50%;
+        left: 50%;
+        z-index: 3;
+        display: none;
+
+    }
+
+    .popup {
+        top:50%;
+        left: 50%;
+        background: #ffffff;
+        padding: 20px;
+        transform: translate(-50%, -50%);
+        padding-top: 60px;
+    }
+
+    .open-popup {
+        cursor: pointer
+    }
+
+    .close-popup {
+        position: fixed;
+        height: 30px;
+        width: 30px;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+    }
+
+</style>
+
+<script>
+    $('.open-popup').click(function (e){
+        e.preventDefault();
+        $('.popup-bg').fadeIn(100);
+
+    });
+
+    $('.close-popup').click(function (e){
+        e.preventDefault();
+        $('.popup-bg').fadeOut(100);
+
+    });
+</script>
